@@ -8,12 +8,14 @@ import java.util.Scanner;
  */
 public class Productos {
 //	creamos nuestros atributos de forma protegida para que las clases hijas puedan acceder a ellos 
+ 
+    static int contadorID = 0;  // Contador global estático para todos los productos
     protected int id;
     protected String nombre;
     protected String categoria;
 
-    public Productos(int id, String nombre, String categoria) {
-        this.id = id;
+    public Productos( String nombre, String categoria) {
+        this.id = contadorID++;
         this.nombre = nombre;
         this.categoria = categoria;
     }
@@ -25,6 +27,7 @@ public class Productos {
 
 	public void setId(int id) {
 		this.id = id;
+		
 	}
 
 	public String getNombre() {
